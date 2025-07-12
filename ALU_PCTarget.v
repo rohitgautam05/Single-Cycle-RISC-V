@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 10.07.2025 15:02:12
+// Create Date: 12.07.2025 16:12:02
 // Design Name: 
-// Module Name: PC_adder
+// Module Name: ALU_PCTarget
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,12 +20,14 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module PC_adder( 
+module ALU_PCTarget(
     input [31:0] PC,
-    output [31:0] PCPlus4
+    input [31:0] ImmExt,
+    output reg [31:0] PCTarget
+
     );
     
-    assign PCPlus4 = PC + 4;
-
-   
+    always@(*)
+    PCTarget = PC + ImmExt;
+    
 endmodule

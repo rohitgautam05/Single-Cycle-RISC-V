@@ -28,8 +28,8 @@ module Register(
     input [4:0] A2,
     input [4:0] A3,
     input [31:0] WD3,
-    output reg [31:0] RD1,
-    output reg [31:0] RD2
+    output [31:0] RD1,
+    output [31:0] RD2
     
     );
 integer i;   
@@ -50,4 +50,6 @@ assign RD2 = Registers [A2];
           
 endmodule
 
-// Packed type cannot be assigned to unpacked type
+//In register file, read operation is done in combinational block
+// In single cycle every operation should be completed between two rising edges 
+// So, if read is done in sequential then we need one clock cycle to read it and whole operation is not completed in single cycle.

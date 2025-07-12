@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 10.07.2025 15:02:12
+// Create Date: 12.07.2025 15:36:05
 // Design Name: 
-// Module Name: PC_adder
+// Module Name: Mux_PC
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,12 +20,13 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module PC_adder( 
-    input [31:0] PC,
-    output [31:0] PCPlus4
+module Mux_PC(
+    input PCSrc,
+    input [31:0] PCPlus4,
+    input [31:0] PCTarget,
+    output [31:0] PCNext
+
     );
     
-    assign PCPlus4 = PC + 4;
-
-   
+    assign PCNext = PCSrc? PCTarget:PCPlus4;
 endmodule

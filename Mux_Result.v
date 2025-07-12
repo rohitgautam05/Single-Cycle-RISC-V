@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 10.07.2025 15:02:12
+// Create Date: 12.07.2025 15:48:51
 // Design Name: 
-// Module Name: PC_adder
+// Module Name: Mux_Result
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,12 +20,13 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module PC_adder( 
-    input [31:0] PC,
-    output [31:0] PCPlus4
+module Mux_Result(
+    input ResultSrc,
+    input [31:0] ALUResult,
+    input [31:0] ReadData,
+    output [31:0] Result
     );
     
-    assign PCPlus4 = PC + 4;
+    assign Result = ResultSrc? ReadData:ALUResult;
 
-   
 endmodule

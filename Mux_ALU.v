@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 10.07.2025 15:02:12
+// Create Date: 12.07.2025 15:36:39
 // Design Name: 
-// Module Name: PC_adder
+// Module Name: Mux_ALU
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,12 +20,13 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module PC_adder( 
-    input [31:0] PC,
-    output [31:0] PCPlus4
+module Mux_ALU(
+    input ALUSrc,
+    input [31:0] ImmExt,
+    input [31:0] RD2,
+    output [31:0] SrcB
+
     );
     
-    assign PCPlus4 = PC + 4;
-
-   
+    assign SrcB = ALUSrc? ImmExt:RD2;
 endmodule
