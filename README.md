@@ -3,3 +3,6 @@ Implementing the datapath for multiple RISC-V instruction types to analyze how c
 
 
 <img width="1256" height="642" alt="Image" src="https://github.com/user-attachments/assets/138987cd-6969-4963-a9e3-0d529e920d36" />
+
+> 📚 Image Source: Adapted from "Digital Design and Computer Architecture, RISC-V Edition" by Harris & Harris.
+
